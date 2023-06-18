@@ -5,6 +5,8 @@ const createApplicationBodySchema = z.object({
   name: z.string({ required_error: 'Name is Required' }),
 });
 
+export type createApplicationBody = z.infer<typeof createApplicationBodySchema>;
+
 export const createApplicationJsonSchema = {
   body: zodToJsonSchema(
     createApplicationBodySchema,
